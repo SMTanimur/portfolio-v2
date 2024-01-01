@@ -9,11 +9,11 @@
 /* Custom Styles Below */
 
 html.dark {
-  background: #121212;
+  background: #0D2438;
 }
 body {
   font-family: "GeneralSans-Regular";
-  @apply dark:bg-[#121212]
+  @apply dark:bg-primary-dark
   
 }
 

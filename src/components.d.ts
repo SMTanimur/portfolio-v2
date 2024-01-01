@@ -9,8 +9,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppHeader: typeof import('./components/header/AppHeader.vue')['default']
     AppHeaderLinks: typeof import('./components/header/AppHeaderLinks.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
-    HireMeModal: typeof import('./components/HireMeModal.vue')['default']
     IconCommunity: typeof import('./components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./components/icons/IconEcosystem.vue')['default']
@@ -18,7 +16,5 @@ declare module 'vue' {
     IconTooling: typeof import('./components/icons/IconTooling.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TheWelcome: typeof import('./components/TheWelcome.vue')['default']
-    WelcomeItem: typeof import('./components/WelcomeItem.vue')['default']
   }
 }

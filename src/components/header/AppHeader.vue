@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import SButton from '@/reusable/SButton/SButton.vue'
-import { toggleDark } from '../../composables/dark'
-import SModal from '@/reusable/SModal.vue';
+import SModal from '@/reusable/SModal.vue'
+import { toggleDark,isDark } from '../../composables/dark'
+import { MoonIcon, SunIcon } from '@heroicons/vue/24/outline';
 const modalIsOpen = ref(false)
 
 // const categories = computed(() => [
@@ -27,13 +28,12 @@ const modalIsOpen = ref(false)
 //   }
 // ])
 
-
 function showModal() {
   modalIsOpen.value = true
 }
 </script>
 <template>
-  <nav id="nav" class="sm:container sm:mx-auto">
+  <nav id="nav" class="container sm:mx-auto">
     <!-- Header start -->
     <div
       class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center my-6"
@@ -51,15 +51,22 @@ function showModal() {
         </div>
 
         <!-- Theme switcher small screen -->
-        <button
-          class="icon-btn mx-2 !outline-none"
-          title="button.toggle_dark"
-          @click="toggleDark()"
-        >
-          <div i="carbon-sun dark:carbon-moon" />
-          dfdf
-        </button>
-
+      
+        <div class="md:hidden">
+          <button
+            class="icon-btn mx-2 !outline-none"
+            title="button.toggle_dark"
+            @click="toggleDark()"
+          >
+           <span class="sr-only">toggle Dark Mode</span>
+            
+            <SunIcon v-if="isDark" class="h-7 w-7 fill-current text-yellow-200 dark:text-yellow-50" />
+            <MoonIcon
+              v-else
+              class="h-7 w-7 fill-current text-secondary-dark dark:text-black"
+            />
+          </button>
+        </div>
         <!-- Small screen hamburger menu -->
         <div class="sm:hidden">
           <button
@@ -96,10 +103,25 @@ function showModal() {
       <div class="hidden sm:flex justify-between items-center flex-col md:flex-row">
         <!-- Hire me button -->
         <div class="hidden md:block">
-          <SButton variant="primary" @click="showModal()" > Hire Me </SButton>
+          <SButton variant="primary" @click="showModal()"> Hire Me </SButton>
         </div>
 
         <!-- Theme switcher large screen -->
+        <div class="hidden md:block">
+          <button
+            class="icon-btn mx-2 !outline-none"
+            title="button.toggle_dark"
+            @click="toggleDark()"
+          >
+           <span class="sr-only">toggle Dark Mode</span>
+            
+            <SunIcon v-if="isDark" class="h-7 w-7 fill-current text-yellow-200 dark:text-yellow-50" />
+            <MoonIcon
+              v-else
+              class="h-7 w-7 fill-current text-secondary-dark dark:text-black"
+            />
+          </button>
+        </div>
       </div>
     </div>
 
@@ -108,10 +130,7 @@ function showModal() {
       <template #header>
         <span class="capitalize">fsfgfd</span>
       </template>
-	  <div>
-		sdfjdskfs
-	  </div>
-      
+      <div>sdfjdskfs</div>
     </SModal>
   </nav>
 </template>
