@@ -9,6 +9,9 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppHeader: typeof import('./components/header/AppHeader.vue')['default']
     AppHeaderLinks: typeof import('./components/header/AppHeaderLinks.vue')['default']
+    CategoryModal: typeof import('./components/shared/CategoryModal.vue')['default']
+    HiredMeModal: typeof import('./components/shared/HiredMeModal.vue')['default']
+    HireMeModal: typeof import('./components/shared/HireMeModal.vue')['default']
     IconCommunity: typeof import('./components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./components/icons/IconEcosystem.vue')['default']

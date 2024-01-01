@@ -1,32 +1,33 @@
 <script setup lang="ts">
 import SButton from '@/reusable/SButton/SButton.vue'
-import SModal from '@/reusable/SModal.vue'
+import HireMeModal from '../shared/HireMeModal.vue';
 import { toggleDark,isDark } from '../../composables/dark'
 import { MoonIcon, SunIcon } from '@heroicons/vue/24/outline';
+import type { ICategory } from '@/types/category';
 const modalIsOpen = ref(false)
 
-// const categories = computed(() => [
-//   {
-//     id: 1,
-//     value: 'web',
-//     name: 'Web Application'
-//   },
-//   {
-//     id: 2,
-//     value: 'mobile',
-//     name: 'Mobile Application'
-//   },
-//   {
-//     id: 3,
-//     value: 'ui-ux',
-//     name: 'UI/UX Design'
-//   },
-//   {
-//     id: 4,
-//     value: 'branding',
-//     name: 'Branding & Anim'
-//   }
-// ])
+const categories = computed(() => [
+  {
+    id: 1,
+    value: 'web',
+    name: 'Web Application'
+  },
+  {
+    id: 2,
+    value: 'mobile',
+    name: 'Mobile Application'
+  },
+  {
+    id: 3,
+    value: 'ui-ux',
+    name: 'UI/UX Design'
+  },
+  {
+    id: 4,
+    value: 'branding',
+    name: 'Branding & Anim'
+  }
+])
 
 function showModal() {
   modalIsOpen.value = true
@@ -54,16 +55,16 @@ function showModal() {
       
         <div class="md:hidden">
           <button
-            class="icon-btn mx-2 !outline-none"
+            class="icon-btn mx-2 !outline-none bg-slate-100 px-2 py-1"
             title="button.toggle_dark"
             @click="toggleDark()"
           >
            <span class="sr-only">toggle Dark Mode</span>
             
-            <SunIcon v-if="isDark" class="h-7 w-7 fill-current text-yellow-200 dark:text-yellow-50" />
+            <SunIcon v-if="isDark" class="h-4 w-4 fill-current text-yellow-200 dark:text-yellow-50" />
             <MoonIcon
               v-else
-              class="h-7 w-7 fill-current text-secondary-dark dark:text-black"
+              class="h-4 w-4 fill-current text-secondary-dark dark:text-black"
             />
           </button>
         </div>
@@ -107,18 +108,18 @@ function showModal() {
         </div>
 
         <!-- Theme switcher large screen -->
-        <div class="hidden md:block">
+        <div class="hidden md:block pl-6">
           <button
-            class="icon-btn mx-2 !outline-none"
+            class=" mx-2 !outline-none bg-slate-100 dark:bg-gray-900 px-4 py-3 rounded-lg"
             title="button.toggle_dark"
             @click="toggleDark()"
           >
            <span class="sr-only">toggle Dark Mode</span>
             
-            <SunIcon v-if="isDark" class="h-7 w-7 fill-current text-yellow-200 dark:text-yellow-50" />
+            <SunIcon v-if="isDark" class="h-6 w-6  text-yellow-200 " />
             <MoonIcon
               v-else
-              class="h-7 w-7 fill-current text-secondary-dark dark:text-black"
+              class="h-6 w-6  text-secondary-dark d"
             />
           </button>
         </div>
@@ -126,12 +127,12 @@ function showModal() {
     </div>
 
     <!-- Hire me modal -->
-    <SModal :open="modalIsOpen" @close="modalIsOpen = false" title="titlefdsfds">
-      <template #header>
-        <span class="capitalize">fsfgfd</span>
-      </template>
-      <div>sdfjdskfs</div>
-    </SModal>
+    <HireMeModal
+    :open="modalIsOpen"
+    :categories="categories"
+    @close="modalIsOpen = false"
+     
+  />
   </nav>
 </template>
 <style scoped></style>
