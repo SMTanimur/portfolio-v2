@@ -11,7 +11,7 @@ import {isDark} from '@/composables';
 		<!-- Banner left contents -->
 		<div class="w-full md:w-1/3 text-left">
 			<h1
-				class="font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
+				class="font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-50 uppercase"
 			>
 				Hi, I am SM Tanimur Rahman
 			</h1>
