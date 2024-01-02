@@ -5,7 +5,7 @@ import { toggleDark,isDark } from '../../composables/dark'
 import { MoonIcon, SunIcon } from '@heroicons/vue/24/outline';
 import type { ICategory } from '@/types/category';
 const modalIsOpen = ref(false)
-
+const isOpen = ref(false)
 const categories = computed(() => [
   {
     id: 1,
@@ -45,7 +45,7 @@ function showModal() {
         <div>
           <router-link
             to="/"
-            class="flex items-center text-2xl font-general-medium text-primary-dark dark:text-ternary-light"
+            class="flex items-center text-2xl font-general-medium text-primary-600"
           >
             <h5>Tanimur</h5>
           </router-link>
@@ -55,23 +55,23 @@ function showModal() {
       
         <div class="md:hidden">
           <button
-            class="icon-btn mx-2 !outline-none bg-slate-100 px-2 py-1"
+            class=" mx-2 !outline-none bg-slate-100 dark:bg-gray-900 px-3 py-2 rounded-lg"
             title="button.toggle_dark"
             @click="toggleDark()"
           >
            <span class="sr-only">toggle Dark Mode</span>
             
-            <SunIcon v-if="isDark" class="h-4 w-4 fill-current text-yellow-200 dark:text-yellow-50" />
+            <SunIcon v-if="isDark" class="h-6 w-6  text-yellow-200 " />
             <MoonIcon
               v-else
-              class="h-4 w-4 fill-current text-secondary-dark dark:text-black"
+              class="h-6 w-6  text-secondary-dark d"
             />
           </button>
         </div>
         <!-- Small screen hamburger menu -->
         <div class="sm:hidden">
           <button
-            @click="modalIsOpen = !modalIsOpen"
+            @click="isOpen = !isOpen"
             type="button"
             class="focus:outline-none"
             aria-label="Hamburger Menu"
@@ -79,16 +79,16 @@ function showModal() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              class="h-7 w-7 fill-current text-secondary-dark dark:text-ternary-light"
+              class="h-7 w-7 fill-current text-secondary-dark dark:text-white"
             >
               <path
-                v-if="modalIsOpen"
+                v-if="isOpen"
                 fill-rule="evenodd"
                 d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
                 clip-rule="evenodd"
               ></path>
               <path
-                v-if="!modalIsOpen"
+                v-if="!isOpen"
                 fill-rule="evenodd"
                 d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
               ></path>
@@ -98,7 +98,7 @@ function showModal() {
       </div>
 
       <!-- Header links -->
-      <AppHeaderLinks :showModal="showModal" :isOpen="modalIsOpen" />
+      <AppHeaderLinks :showModal="showModal" :isOpen="isOpen" />
 
       <!-- Header right section buttons -->
       <div class="hidden sm:flex justify-between items-center flex-col md:flex-row">

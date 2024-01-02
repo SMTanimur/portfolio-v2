@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toggleDark } from '../composables/dark'
+import HeroSection from '@/components/home/HeroSection.vue';
 useHead({
   title: "Home",
   meta: [
@@ -77,9 +77,8 @@ useHead({
 </script>
 
 <template>
-  <main>
-    <button class="icon-btn mx-2 !outline-none text-green-500" title="buttontoggle_dark" @click="toggleDark()">
-      Toggle
-      </button>
+  <main class="container mx-auto">
+   <!-- Hero Section -->
+   <HeroSection/>
   </main>
 </template>

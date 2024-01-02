@@ -48,7 +48,7 @@ watch(
 
 <template>
   <Listbox as="div" v-model="selected">
-    <ListboxLabel class="block text-sm font-medium text-gray-700">
+    <ListboxLabel class="block text-sm font-medium text-gray-700 dark:text-white">
       {{ label }}
     </ListboxLabel>
     <div class="relative mt-1">

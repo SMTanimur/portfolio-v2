@@ -50,7 +50,7 @@ defineEmits<{ (e: 'close'): void }>()
             class="relative inline-block w-full transform rounded-lg bg-white align-middle shadow-xl transition-all sm:my-8 dark:bg-gray-900"
           >
             <div class="flex items-center justify-between px-6 pt-6">
-              <SectionHeader :title="title" class="truncate" />
+              <SectionHeader :title="title" class="truncate dark:text-white" />
 
               <XMarkIcon
                 @click="$emit('close')"

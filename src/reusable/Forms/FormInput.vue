@@ -50,7 +50,7 @@ watch(
 
 <template>
   <div>
-    <FormLabel :id="id" :text="label" />
+    <FormLabel :id="id" :text="label" class="dark:text-white"/>
 
     <div class="relative rounded-md shadow-sm">
       <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
