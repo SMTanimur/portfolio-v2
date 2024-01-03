@@ -25,16 +25,16 @@ export const projects:IProject[] = [
 	// 	category: 'UI/UX Design',
 	// 	img: '@/assets/images/ui-project-2.jpg',
 	// },
-	// {
-	// 	id: 5,
-	// 	title: 'React Social App',
-	// 	category: 'Mobile Application',
-	// 	img: '@/assets/images/mobile-project-1.jpg',
-	// },
-	// {
-	// 	id: 6,
-	// 	title: 'Apple Design System',
-	// 	category: 'Web Application',
-	// 	img: '@/assets/images/web-project-1.jpg',
-	// },
+	{
+		id: 3,
+		title: 'UmmahLink Social Platform',
+		category: 'Mobile Application',
+		img: 'https://res.cloudinary.com/smtanimur/image/upload/v1704259336/tanimur/Screenshot_from_2024-01-03_11-12-28_cgxta9.png',
+	},
+	{
+		id: 6,
+		title: 'Quiz App',
+		category: 'Web Application',
+		img: 'https://res.cloudinary.com/smtanimur/image/upload/v1704259540/tanimur/Screenshot_from_2024-01-03_11-22-30_jpeqxz.png',
+	},
 ];
