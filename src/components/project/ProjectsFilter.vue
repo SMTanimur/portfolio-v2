@@ -21,7 +21,7 @@ export default {
 
 <template>
 	  <select
-    @change="$emit('filter', $event?.target?.value as string)"
+	  @change="$emit('filter', ($event.target as HTMLSelectElement)?.value)"
     :name="select"
     :id="select"
     class="font-general-medium
