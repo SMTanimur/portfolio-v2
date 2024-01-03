@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HeroSection from '@/components/home/HeroSection.vue';
+import ProjectsGrid from '@/components/project/ProjectsGrid.vue';
 useHead({
   title: "Home",
   meta: [
@@ -80,5 +81,6 @@ useHead({
   <main class="container mx-auto">
    <!-- Hero Section -->
    <HeroSection/>
+   <ProjectsGrid/>
   </main>
 </template>

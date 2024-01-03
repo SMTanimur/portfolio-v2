@@ -20,7 +20,11 @@ declare module 'vue' {
     IconSupport: typeof import('./components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./components/icons/IconTooling.vue')['default']
     ProjectGrid: typeof import('./components/project/ProjectGrid.vue')['default']
+    ProjectHeader: typeof import('./components/project/ProjectHeader.vue')['default']
+    ProjectInfo: typeof import('./components/project/ProjectInfo.vue')['default']
+    ProjectsFilter: typeof import('./components/project/ProjectsFilter.vue')['default']
     ProjectsGrid: typeof import('./components/project/ProjectsGrid.vue')['default']
+    ProjectSingle: typeof import('./components/project/ProjectSingle.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
